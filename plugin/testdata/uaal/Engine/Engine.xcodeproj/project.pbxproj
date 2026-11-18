@@ -1,0 +1,22 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		C0000000000000000000B001 /* Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Engine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0000000000000000000B002 /* EngineFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EngineFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0000000000000000000B003 = {isa = PBXGroup; children = (); sourceTree = "<group>"; };
+		C0000000000000000000B004 /* Engine-iPhone */ = {isa = PBXNativeTarget; buildConfigurationList = C0000000000000000000B006; name = "Engine-iPhone"; productName = Engine; productReference = C0000000000000000000B001; productType = "com.apple.product-type.application"; };
+		C0000000000000000000B005 /* EngineFramework */ = {isa = PBXNativeTarget; buildConfigurationList = C0000000000000000000B006; name = EngineFramework; productName = EngineFramework; productReference = C0000000000000000000B002; productType = "com.apple.product-type.framework"; };
+		C0000000000000000000B007 /* Project object */ = {isa = PBXProject; buildConfigurationList = C0000000000000000000B008; mainGroup = C0000000000000000000B003; projectDirPath = ""; projectRoot = ""; targets = (C0000000000000000000B004, C0000000000000000000B005, ); };
+		C0000000000000000000B008 = {isa = XCConfigurationList; buildConfigurations = (C0000000000000000000B010, C0000000000000000000B011, C0000000000000000000B012, ); defaultConfigurationName = Release; };
+		C0000000000000000000B010 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; }; name = Debug; };
+		C0000000000000000000B011 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; }; name = Release; };
+		C0000000000000000000B012 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; }; name = ReleaseForRunning; };
+		C0000000000000000000B006 = {isa = XCConfigurationList; buildConfigurations = (C0000000000000000000B013, ); defaultConfigurationName = Release; };
+		C0000000000000000000B013 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_BUNDLE_IDENTIFIER = "com.example.engine"; }; name = Release; };
+	};
+	rootObject = C0000000000000000000B007 /* Project object */;
+}

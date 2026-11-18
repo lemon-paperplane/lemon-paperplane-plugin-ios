@@ -1,0 +1,61 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+		B0000000000000000000A001 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0000000000000000000A002 /* Engine/Engine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Engine/Engine.xcodeproj"; sourceTree = "<group>"; };
+		B0000000000000000000A003 = {isa = PBXGroup; children = (B0000000000000000000A002 /* Engine/Engine.xcodeproj */, B0000000000000000000A004 /* Products */, ); sourceTree = "<group>"; };
+		B0000000000000000000A004 /* Products */ = {isa = PBXGroup; children = (B0000000000000000000A001 /* App.app */, ); name = Products; sourceTree = "<group>"; };
+		B0000000000000000000A005 /* App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0000000000000000000A006;
+			buildPhases = ();
+			dependencies = ();
+			name = App;
+			productName = App;
+			productReference = B0000000000000000000A001 /* App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0000000000000000000A00C /* AppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0000000000000000000A00D;
+			buildPhases = ();
+			dependencies = ();
+			name = AppClip;
+			productName = AppClip;
+			productReference = B0000000000000000000A00E /* AppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		B0000000000000000000A00E /* AppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = AppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0000000000000000000A007 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B0000000000000000000A008;
+			mainGroup = B0000000000000000000A003;
+			packageReferences = (
+				B0000000000000000000A00F /* XCRemoteSwiftPackageReference "swift-log" */,
+			);
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B0000000000000000000A010 /* Products */;
+					ProjectRef = B0000000000000000000A002 /* Engine/Engine.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (B0000000000000000000A005 /* App */, B0000000000000000000A00C /* AppClip */, );
+		};
+		B0000000000000000000A00F /* XCRemoteSwiftPackageReference "swift-log" */ = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/apple/swift-log.git"; requirement = {kind = upToNextMajorVersion; minimumVersion = 1.5.0; }; };
+		B0000000000000000000A008 = {isa = XCConfigurationList; buildConfigurations = (B0000000000000000000A020 /* Debug */, B0000000000000000000A021 /* Release */, ); defaultConfigurationName = Release; };
+		B0000000000000000000A020 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 15.0; "CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer"; }; name = Debug; };
+		B0000000000000000000A021 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 15.0; }; name = Release; };
+		B0000000000000000000A006 = {isa = XCConfigurationList; buildConfigurations = (B0000000000000000000A022 /* Debug */, B0000000000000000000A023 /* Release */, ); defaultConfigurationName = Release; };
+		B0000000000000000000A022 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_BUNDLE_IDENTIFIER = "com.example.app"; DEVELOPMENT_TEAM = TEAM123456; CODE_SIGN_STYLE = Automatic; IPHONEOS_DEPLOYMENT_TARGET = 16.6; PRODUCT_NAME = "$(TARGET_NAME)"; "PRODUCT_BUNDLE_IDENTIFIER[config=Debug]" = "com.example.app.debug"; }; name = Debug; };
+		B0000000000000000000A023 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_BUNDLE_IDENTIFIER = "com.example.app"; DEVELOPMENT_TEAM = TEAM123456; CODE_SIGN_STYLE = Automatic; IPHONEOS_DEPLOYMENT_TARGET = 16.6; PRODUCT_NAME = "$(TARGET_NAME)"; }; name = Release; };
+		B0000000000000000000A00D = {isa = XCConfigurationList; buildConfigurations = (B0000000000000000000A024 /* Debug */, ); defaultConfigurationName = Debug; };
+		B0000000000000000000A024 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_BUNDLE_IDENTIFIER = "$(PARENT_ID).Clip"; PARENT_ID = "com.example.app"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SDKROOT = auto; }; name = Debug; };
+	};
+	rootObject = B0000000000000000000A007 /* Project object */;
+}

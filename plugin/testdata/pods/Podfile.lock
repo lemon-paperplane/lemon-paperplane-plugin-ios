@@ -1,0 +1,9 @@
+PODS:
+  - Alamofire (5.9.1)
+
+DEPENDENCIES:
+  - Alamofire
+
+PODFILE CHECKSUM: 0000
+
+COCOAPODS: 1.15.2

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion = "0500" version = "2.0">
+   <LaunchAction buildConfiguration = "ReleaseForRunning">
+      <BuildableProductRunnable runnableDebuggingMode = "0">
+         <BuildableReference BuildableIdentifier = "primary" BlueprintIdentifier = "C0000000000000000000B004" BuildableName = "App.app" BlueprintName = "Engine-iPhone" ReferencedContainer = "container:Engine.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>

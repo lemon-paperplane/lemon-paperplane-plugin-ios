@@ -1,0 +1,25 @@
+[
+  {
+    "action": "build",
+    "buildSettings": {
+      "TARGET_BUILD_DIR": "/tmp/sample/dd/Build/Products/Debug-iphoneos",
+      "FULL_PRODUCT_NAME": "Engine.framework",
+      "WRAPPER_EXTENSION": "framework"
+    },
+    "target": "Engine"
+  },
+  {
+    "action": "build",
+    "buildSettings": {
+      "TARGET_BUILD_DIR": "/tmp/sample/dd/Build/Products/Debug-iphoneos",
+      "FULL_PRODUCT_NAME": "HelloPP.app",
+      "PRODUCT_BUNDLE_IDENTIFIER": "cn.lemonit.paperplane.sample.HelloPP",
+      "WRAPPER_EXTENSION": "app",
+      "PRODUCT_TYPE": "com.apple.product-type.application",
+      "CONFIGURATION": "Debug",
+      "PLATFORM_NAME": "iphoneos",
+      "IPHONEOS_DEPLOYMENT_TARGET": "17.0"
+    },
+    "target": "HelloPP"
+  }
+]

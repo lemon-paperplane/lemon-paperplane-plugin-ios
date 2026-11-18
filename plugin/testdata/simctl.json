@@ -1,0 +1,48 @@
+{
+  "devices" : {
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-2" : [
+      {
+        "dataPath" : "/Users/x/Library/Developer/CoreSimulator/Devices/AAAA0001-0000-0000-0000-000000000001/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "/Users/x/Library/Logs/CoreSimulator/AAAA0001-0000-0000-0000-000000000001",
+        "udid" : "AAAA0001-0000-0000-0000-000000000001",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+        "state" : "Shutdown",
+        "name" : "iPhone 16"
+      },
+      {
+        "udid" : "AAAA0002-0000-0000-0000-000000000002",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M2)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-5" : [
+      {
+        "lastBootedAt" : "2026-11-01T08:00:00Z",
+        "udid" : "AAAA0003-0000-0000-0000-000000000003",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+        "state" : "Booted",
+        "name" : "iPhone 15"
+      },
+      {
+        "udid" : "AAAA0004-0000-0000-0000-000000000004",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found",
+        "state" : "Shutdown",
+        "name" : "iPhone SE"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.watchOS-11-2" : [
+      {
+        "udid" : "BBBB0001-0000-0000-0000-000000000001",
+        "isAvailable" : true,
+        "state" : "Booted",
+        "name" : "Apple Watch Series 10 (46mm)"
+      }
+    ]
+  }
+}

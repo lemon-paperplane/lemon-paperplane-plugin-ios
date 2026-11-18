@@ -1,0 +1,634 @@
+{
+  "info": {
+    "arguments": [
+      "devicectl",
+      "list",
+      "devices",
+      "--json-output",
+      "devices.json"
+    ],
+    "commandType": "devicectl.list.devices",
+    "environment": {},
+    "jsonVersion": 5,
+    "outcome": "success",
+    "version": "651.32"
+  },
+  "result": {
+    "devices": [
+      {
+        "_deprecationNotice": {
+          "deprecatedFields": [
+            "hardwareProperties",
+            "deviceProperties",
+            "connectionProperties"
+          ],
+          "message": "The 'hardwareProperties', 'deviceProperties', 'connectionProperties' fields are deprecated and will be removed in a future release. Use the 'properties' dictionary instead.",
+          "replacement": "properties"
+        },
+        "capabilities": [
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.acquireusageassertion",
+            "name": "Acquire Usage Assertion"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.connectdevice",
+            "name": "Connect to Device"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.default.user.credentials",
+            "name": "Modify Credentials for Default Users for a Device"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.tags",
+            "name": "Modify Tags"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.unpairdevice",
+            "name": "Unpair Device"
+          }
+        ],
+        "connectionProperties": {
+          "authenticationType": "manualPairing",
+          "isMobileDeviceOnly": false,
+          "lastConnectionDate": "2026-11-18T09:12:00.000Z",
+          "pairingState": "paired",
+          "potentialHostnames": [
+            "redacted",
+            "redacted",
+            "redacted"
+          ],
+          "transportType": "localNetwork",
+          "tunnelState": "disconnected",
+          "tunnelTransportProtocol": "tcp"
+        },
+        "deviceProperties": {
+          "bootState": "booted",
+          "bootedFromSnapshot": true,
+          "bootedSnapshotName": "redacted",
+          "ddiServicesAvailable": false,
+          "developerModeStatus": "enabled",
+          "hasInternalOSBuild": false,
+          "name": "iPad",
+          "osBuildUpdate": "23G71",
+          "osVersionNumber": "26.6",
+          "rootFileSystemIsWritable": false,
+          "supportsCheckedAllocations": false
+        },
+        "hardwareProperties": {
+          "cpuType": {
+            "name": "arm64e",
+            "subType": -2147483646,
+            "type": 16777228
+          },
+          "deviceType": "iPad",
+          "ecid": 1234567890,
+          "hardwareModel": "J317AP",
+          "internalStorageCapacity": 256000000000,
+          "isProductionFused": true,
+          "marketingName": "iPad Pro (11-inch)",
+          "platform": "iOS",
+          "productType": "iPad8,1",
+          "reality": "physical",
+          "serialNumber": "SERIAL0000",
+          "supportedCPUTypes": [
+            {
+              "name": "arm64e",
+              "subType": -2147483646,
+              "type": 16777228
+            },
+            {
+              "name": "arm64",
+              "subType": 0,
+              "type": 16777228
+            }
+          ],
+          "supportedDeviceFamilies": [
+            1,
+            2
+          ],
+          "thinningProductType": "iPad8,1",
+          "udid": "00008001-0000000000000001"
+        },
+        "identifier": "11111111-2222-3333-4444-000000000001",
+        "properties": {
+          "connection": {
+            "authenticationType": "manualPairing",
+            "lastConnectionDate": 816685920,
+            "pairingState": "paired",
+            "state": "disconnected",
+            "transportType": "localNetwork",
+            "tunnelTransportProtocol": "tcp"
+          },
+          "hardware": {
+            "cpuCount": {
+              "logicalCores": 8,
+              "packages": 1,
+              "physicalCores": 8
+            },
+            "cpuType": {
+              "subtype": 18446744071562067970,
+              "type": 16777228
+            },
+            "deviceType": "iPad",
+            "ecid": 1234567890,
+            "hasActionButton": false,
+            "internalStorageCapacity": 256000000000,
+            "marketingName": "iPad Pro (11-inch)",
+            "platform": "iOS",
+            "productType": "iPad8,1",
+            "reality": "physical",
+            "serialNumber": "SERIAL0000",
+            "supportedBiometrics": [
+              "faceID"
+            ],
+            "supportedCPUTypes": [
+              {
+                "subtype": 18446744071562067970,
+                "type": 16777228
+              },
+              {
+                "subtype": 0,
+                "type": 16777228
+              }
+            ],
+            "supportedDeviceFamilies": [
+              1,
+              2
+            ],
+            "supportsSiri": true,
+            "thinningProductType": "iPad8,1",
+            "udid": "00008001-0000000000000001"
+          },
+          "software": {
+            "osBuildVersions": {
+              "buildVersion": {
+                "majorLetterComponent": "G",
+                "majorNumberComponent": 23,
+                "name": "23G71",
+                "revisionVersion": {
+                  "components": [
+                    23,
+                    7,
+                    71,
+                    0,
+                    0
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "23.7.71.0.0"
+                },
+                "trainProgram": "iOS",
+                "updateNumberComponent": 71
+              },
+              "supplementalBuildVersion": {
+                "majorLetterComponent": "G",
+                "majorNumberComponent": 23,
+                "name": "23G71",
+                "revisionVersion": {
+                  "components": [
+                    23,
+                    7,
+                    71,
+                    0,
+                    0
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "23.7.71.0.0"
+                },
+                "trainProgram": "iOS",
+                "updateNumberComponent": 71
+              }
+            },
+            "osVersionNumber": {
+              "components": [
+                26,
+                6,
+                0,
+                0,
+                0
+              ],
+              "originalComponentsCount": 2,
+              "stringValue": "26.6"
+            },
+            "supportsCheckedAllocations": false
+          },
+          "state": {
+            "bootState": "booted",
+            "developerModeStatus": {
+              "enabled": {
+                "mode": 1
+              }
+            },
+            "name": "iPad"
+          }
+        },
+        "propertyDisplayNames": null,
+        "visibilityClass": "default"
+      },
+      {
+        "_deprecationNotice": {
+          "deprecatedFields": [
+            "hardwareProperties",
+            "deviceProperties",
+            "connectionProperties"
+          ],
+          "message": "The 'hardwareProperties', 'deviceProperties', 'connectionProperties' fields are deprecated and will be removed in a future release. Use the 'properties' dictionary instead.",
+          "replacement": "properties"
+        },
+        "capabilities": [
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.default.user.credentials",
+            "name": "Modify Credentials for Default Users for a Device"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.tags",
+            "name": "Modify Tags"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.unpairdevice",
+            "name": "Unpair Device"
+          }
+        ],
+        "connectionProperties": {
+          "authenticationType": "manualPairing",
+          "isMobileDeviceOnly": false,
+          "lastConnectionDate": "2026-11-16T12:31:00.000Z",
+          "pairingState": "paired",
+          "potentialHostnames": [
+            "redacted",
+            "redacted",
+            "redacted"
+          ],
+          "tunnelState": "unavailable"
+        },
+        "deviceProperties": {
+          "bootedFromSnapshot": true,
+          "bootedSnapshotName": "redacted",
+          "ddiServicesAvailable": false,
+          "developerModeStatus": "enabled",
+          "hasInternalOSBuild": false,
+          "name": "测试的iPad",
+          "osBuildUpdate": "24B5089g",
+          "osVersionNumber": "27.2",
+          "releaseType": "Beta",
+          "rootFileSystemIsWritable": false,
+          "supportsCheckedAllocations": false
+        },
+        "hardwareProperties": {
+          "cpuType": {
+            "name": "arm64e",
+            "subType": -2147483646,
+            "type": 16777228
+          },
+          "deviceType": "iPad",
+          "ecid": 1234567890,
+          "hardwareModel": "J637AP",
+          "internalStorageCapacity": 128000000000,
+          "isProductionFused": true,
+          "marketingName": "iPad Air 13-inch (M3)",
+          "platform": "iOS",
+          "productType": "iPad15,5",
+          "reality": "physical",
+          "serialNumber": "SERIAL0000",
+          "supportedCPUTypes": [
+            {
+              "name": "arm64e",
+              "subType": -2147483646,
+              "type": 16777228
+            },
+            {
+              "name": "arm64",
+              "subType": 0,
+              "type": 16777228
+            }
+          ],
+          "supportedDeviceFamilies": [
+            1,
+            2
+          ],
+          "thinningProductType": "iPad15,5",
+          "udid": "00008002-0000000000000002"
+        },
+        "identifier": "11111111-2222-3333-4444-000000000002",
+        "properties": {
+          "connection": {
+            "authenticationType": "manualPairing",
+            "lastConnectionDate": 816525060,
+            "pairingState": "paired",
+            "state": "unavailable"
+          },
+          "hardware": {
+            "cpuCount": {
+              "logicalCores": 8,
+              "packages": 1,
+              "physicalCores": 8
+            },
+            "cpuType": {
+              "subtype": 18446744071562067970,
+              "type": 16777228
+            },
+            "deviceType": "iPad",
+            "ecid": 1234567890,
+            "hasActionButton": false,
+            "internalStorageCapacity": 128000000000,
+            "marketingName": "iPad Air 13-inch (M3)",
+            "platform": "iOS",
+            "productType": "iPad15,5",
+            "reality": "physical",
+            "serialNumber": "SERIAL0000",
+            "supportedBiometrics": [
+              "touchID"
+            ],
+            "supportedCPUTypes": [
+              {
+                "subtype": 18446744071562067970,
+                "type": 16777228
+              },
+              {
+                "subtype": 0,
+                "type": 16777228
+              }
+            ],
+            "supportedDeviceFamilies": [
+              1,
+              2
+            ],
+            "supportsSiri": true,
+            "thinningProductType": "iPad15,5",
+            "udid": "00008002-0000000000000002"
+          },
+          "software": {
+            "osBuildVersions": {
+              "buildVersion": {
+                "majorLetterComponent": "B",
+                "majorNumberComponent": 24,
+                "name": "24B5089g",
+                "revisionVersion": {
+                  "components": [
+                    24,
+                    2,
+                    89,
+                    5,
+                    7
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "24.2.89.5.7"
+                },
+                "trainProgram": "iOS",
+                "updateLetterComponent": "g",
+                "updateNumberComponent": 5089
+              },
+              "supplementalBuildVersion": {
+                "majorLetterComponent": "B",
+                "majorNumberComponent": 24,
+                "name": "24B5089g",
+                "revisionVersion": {
+                  "components": [
+                    24,
+                    2,
+                    89,
+                    5,
+                    7
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "24.2.89.5.7"
+                },
+                "trainProgram": "iOS",
+                "updateLetterComponent": "g",
+                "updateNumberComponent": 5089
+              }
+            },
+            "osVersionNumber": {
+              "components": [
+                27,
+                2,
+                0,
+                0,
+                0
+              ],
+              "originalComponentsCount": 2,
+              "stringValue": "27.2"
+            },
+            "supportsCheckedAllocations": false
+          },
+          "state": {
+            "developerModeStatus": {
+              "enabled": {
+                "mode": 1
+              }
+            },
+            "name": "测试的iPad"
+          }
+        },
+        "propertyDisplayNames": null,
+        "visibilityClass": "default"
+      },
+      {
+        "_deprecationNotice": {
+          "deprecatedFields": [
+            "hardwareProperties",
+            "deviceProperties",
+            "connectionProperties"
+          ],
+          "message": "The 'hardwareProperties', 'deviceProperties', 'connectionProperties' fields are deprecated and will be removed in a future release. Use the 'properties' dictionary instead.",
+          "replacement": "properties"
+        },
+        "capabilities": [
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.acquireusageassertion",
+            "name": "Acquire Usage Assertion"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.connectdevice",
+            "name": "Connect to Device"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.default.user.credentials",
+            "name": "Modify Credentials for Default Users for a Device"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.tags",
+            "name": "Modify Tags"
+          },
+          {
+            "featureIdentifier": "com.apple.coredevice.feature.unpairdevice",
+            "name": "Unpair Device"
+          }
+        ],
+        "connectionProperties": {
+          "authenticationType": "manualPairing",
+          "isMobileDeviceOnly": false,
+          "lastConnectionDate": "2026-11-18T08:29:00.000Z",
+          "pairingState": "paired",
+          "potentialHostnames": [
+            "redacted",
+            "redacted",
+            "redacted"
+          ],
+          "transportType": "localNetwork",
+          "tunnelState": "disconnected",
+          "tunnelTransportProtocol": "tcp"
+        },
+        "deviceProperties": {
+          "bootState": "booted",
+          "bootedFromSnapshot": true,
+          "bootedSnapshotName": "redacted",
+          "ddiServicesAvailable": false,
+          "developerModeStatus": "enabled",
+          "hasInternalOSBuild": false,
+          "name": "测试的iPhone",
+          "osBuildUpdate": "24B156",
+          "osVersionNumber": "27.2.1",
+          "rootFileSystemIsWritable": false,
+          "supportsCheckedAllocations": false
+        },
+        "hardwareProperties": {
+          "cpuType": {
+            "name": "arm64e",
+            "subType": -2147483646,
+            "type": 16777228
+          },
+          "deviceType": "iPhone",
+          "ecid": 1234567890,
+          "hardwareModel": "D73AP",
+          "internalStorageCapacity": 256000000000,
+          "isProductionFused": true,
+          "marketingName": "iPhone 14 Pro",
+          "platform": "iOS",
+          "productType": "iPhone15,2",
+          "reality": "physical",
+          "serialNumber": "SERIAL0000",
+          "supportedCPUTypes": [
+            {
+              "name": "arm64e",
+              "subType": -2147483646,
+              "type": 16777228
+            },
+            {
+              "name": "arm64",
+              "subType": 0,
+              "type": 16777228
+            }
+          ],
+          "supportedDeviceFamilies": [
+            1
+          ],
+          "thinningProductType": "iPhone15,2",
+          "udid": "00008003-0000000000000003"
+        },
+        "identifier": "11111111-2222-3333-4444-000000000003",
+        "properties": {
+          "connection": {
+            "authenticationType": "manualPairing",
+            "lastConnectionDate": 816683340,
+            "pairingState": "paired",
+            "state": "disconnected",
+            "transportType": "localNetwork",
+            "tunnelTransportProtocol": "tcp"
+          },
+          "hardware": {
+            "cpuCount": {
+              "logicalCores": 6,
+              "packages": 1,
+              "physicalCores": 6
+            },
+            "cpuType": {
+              "subtype": 18446744071562067970,
+              "type": 16777228
+            },
+            "deviceType": "iPhone",
+            "ecid": 1234567890,
+            "hasActionButton": false,
+            "internalStorageCapacity": 256000000000,
+            "marketingName": "iPhone 14 Pro",
+            "platform": "iOS",
+            "productType": "iPhone15,2",
+            "reality": "physical",
+            "serialNumber": "SERIAL0000",
+            "supportedBiometrics": [
+              "faceID"
+            ],
+            "supportedCPUTypes": [
+              {
+                "subtype": 18446744071562067970,
+                "type": 16777228
+              },
+              {
+                "subtype": 0,
+                "type": 16777228
+              }
+            ],
+            "supportedDeviceFamilies": [
+              1
+            ],
+            "supportsSiri": true,
+            "thinningProductType": "iPhone15,2",
+            "udid": "00008003-0000000000000003"
+          },
+          "software": {
+            "osBuildVersions": {
+              "buildVersion": {
+                "majorLetterComponent": "B",
+                "majorNumberComponent": 24,
+                "name": "24B156",
+                "revisionVersion": {
+                  "components": [
+                    24,
+                    2,
+                    156,
+                    0,
+                    0
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "24.2.156.0.0"
+                },
+                "trainProgram": "iOS",
+                "updateNumberComponent": 156
+              },
+              "supplementalBuildVersion": {
+                "majorLetterComponent": "B",
+                "majorNumberComponent": 24,
+                "name": "24B156",
+                "revisionVersion": {
+                  "components": [
+                    24,
+                    2,
+                    156,
+                    0,
+                    0
+                  ],
+                  "originalComponentsCount": 5,
+                  "stringValue": "24.2.156.0.0"
+                },
+                "trainProgram": "iOS",
+                "updateNumberComponent": 156
+              }
+            },
+            "osVersionNumber": {
+              "components": [
+                27,
+                2,
+                1,
+                0,
+                0
+              ],
+              "originalComponentsCount": 3,
+              "stringValue": "27.2.1"
+            },
+            "supportsCheckedAllocations": false
+          },
+          "state": {
+            "bootState": "booted",
+            "developerModeStatus": {
+              "enabled": {
+                "mode": 1
+              }
+            },
+            "name": "测试的iPhone"
+          }
+        },
+        "propertyDisplayNames": null,
+        "visibilityClass": "default"
+      }
+    ]
+  }
+}

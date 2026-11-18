@@ -1,0 +1,20 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		D0000000000000000000C001 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0000000000000000000C002 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		D0000000000000000000C003 /* Pods */ = {isa = PBXGroup; children = (D0000000000000000000C002 /* Pods-Demo.debug.xcconfig */, ); path = Pods; sourceTree = "<group>"; };
+		D0000000000000000000C004 = {isa = PBXGroup; children = (D0000000000000000000C003 /* Pods */, ); sourceTree = "<group>"; };
+		D0000000000000000000C005 /* Demo */ = {isa = PBXNativeTarget; buildConfigurationList = D0000000000000000000C006; name = Demo; productName = Demo; productReference = D0000000000000000000C001; productType = "com.apple.product-type.application"; };
+		D0000000000000000000C007 /* Project object */ = {isa = PBXProject; buildConfigurationList = D0000000000000000000C008; mainGroup = D0000000000000000000C004; projectDirPath = ""; projectRoot = ""; targets = (D0000000000000000000C005, ); };
+		D0000000000000000000C008 = {isa = XCConfigurationList; buildConfigurations = (D0000000000000000000C010, ); defaultConfigurationName = Debug; };
+		D0000000000000000000C010 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; }; name = Debug; };
+		D0000000000000000000C006 = {isa = XCConfigurationList; buildConfigurations = (D0000000000000000000C011, ); defaultConfigurationName = Debug; };
+		D0000000000000000000C011 = {isa = XCBuildConfiguration; baseConfigurationReference = D0000000000000000000C002 /* Pods-Demo.debug.xcconfig */; buildSettings = {PRODUCT_BUNDLE_IDENTIFIER = "$(PODS_BUNDLE_PREFIX).demo"; OTHER_LDFLAGS = ("$(inherited)", "-ObjC", ); }; name = Debug; };
+	};
+	rootObject = D0000000000000000000C007 /* Project object */;
+}

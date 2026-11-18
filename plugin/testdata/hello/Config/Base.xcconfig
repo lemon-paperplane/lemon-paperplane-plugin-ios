@@ -1,0 +1,3 @@
+// 样例 xcconfig：Bundle ID 前缀
+BUNDLE_ID_PREFIX = cn.lemonit.paperplane.sample
+DEVELOPMENT_TEAM = ABCDE12345

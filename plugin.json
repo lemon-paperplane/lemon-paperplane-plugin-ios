@@ -1,0 +1,632 @@
+{
+  "id": "ios",
+  "name": "%plugin.name%",
+  "version": "0.1.0",
+  "vendor": "Lemon Paperplane",
+  "description": "%plugin.description%",
+  "icon": "icons/ios.svg",
+  "license": "MIT",
+  "category": "buildSystem",
+  "engines": {
+    "paperplane": ">=0.1.0 <0.2.0"
+  },
+  "protocol": 1,
+  "executable": "bin/paperplane-plugin-ios",
+  "activation": {
+    "files": [
+      "*.xcworkspace/",
+      "*.xcodeproj/"
+    ]
+  },
+  "contributes": {
+    "facets": [
+      {
+        "id": "ios",
+        "name": "iOS",
+        "icon": "icons/ios.svg",
+        "category": "runtime",
+        "priority": 50
+      }
+    ],
+    "runConfigurationTypes": [
+      {
+        "id": "ios-app",
+        "name": "%run.app%",
+        "icon": "icons/ios.svg",
+        "facets": [
+          "ios"
+        ],
+        "options": [
+          {
+            "key": "scheme",
+            "title": "%opt.scheme%",
+            "type": "select",
+            "optionsFrom": "ios.schemes",
+            "required": true
+          },
+          {
+            "key": "configuration",
+            "title": "%opt.configuration%",
+            "type": "select",
+            "optionsFrom": "ios.configurations",
+            "default": "Debug"
+          },
+          {
+            "key": "device",
+            "title": "%opt.device%",
+            "type": "select",
+            "optionsFrom": "ios.devices",
+            "default": "",
+            "info": "%opt.device.info%",
+            "live": true
+          },
+          {
+            "key": "args",
+            "title": "%opt.args%",
+            "type": "string",
+            "info": "%opt.args.info%"
+          },
+          {
+            "key": "env",
+            "title": "%opt.env%",
+            "type": "keyvalue",
+            "advanced": true,
+            "info": "%opt.env.info%"
+          },
+          {
+            "key": "container",
+            "title": "%opt.container%",
+            "type": "select",
+            "optionsFrom": "ios.containers",
+            "default": "",
+            "advanced": true,
+            "info": "%opt.container.info%"
+          },
+          {
+            "key": "showWarnings",
+            "title": "%opt.showWarnings%",
+            "type": "boolean",
+            "default": false,
+            "advanced": true,
+            "info": "%opt.showWarnings.info%"
+          }
+        ]
+      }
+    ],
+    "dependencyManagers": [
+      "cocoapods",
+      "swiftpm"
+    ],
+    "settings": [
+      {
+        "key": "allowProvisioningUpdates",
+        "title": "%setting.allowProvisioning%",
+        "type": "boolean",
+        "default": true,
+        "info": "%setting.allowProvisioning.info%"
+      }
+    ],
+    "readyPatterns": [
+      {
+        "hint": "Launched application with",
+        "pattern": "Launched application with",
+        "facets": [
+          "ios"
+        ]
+      },
+      {
+        "hint": "Waiting for the application to terminate",
+        "pattern": "Waiting for the application to terminate",
+        "facets": [
+          "ios"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "openXcode",
+        "title": "%action.openXcode%",
+        "icon": "builtin:square-arrow-out-up-right",
+        "facets": [
+          "ios"
+        ],
+        "group": "open",
+        "locations": [
+          "project.toolbar",
+          "project.menu",
+          "card.menu"
+        ]
+      },
+      {
+        "id": "testflight",
+        "title": "%action.testflight%",
+        "icon": "builtin:cloud-upload",
+        "facets": [
+          "ios"
+        ],
+        "group": "build",
+        "confirm": "%action.testflight.confirm%",
+        "locations": [
+          "project.menu"
+        ]
+      },
+      {
+        "id": "exportIpa",
+        "title": "%action.exportIpa%",
+        "icon": "builtin:file-archive",
+        "facets": [
+          "ios"
+        ],
+        "group": "build",
+        "locations": [
+          "project.menu"
+        ],
+        "form": [
+          {
+            "key": "method",
+            "title": "%form.method%",
+            "type": "select",
+            "default": "debugging",
+            "required": true,
+            "info": "%form.method.info%",
+            "options": [
+              {
+                "value": "debugging",
+                "label": "%form.method.development%"
+              },
+              {
+                "value": "release-testing",
+                "label": "%form.method.adhoc%"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "devices",
+        "title": "%tool.devices%",
+        "description": "List iOS devices and simulators that can be used to run an iOS app (via `xcrun devicectl list devices` and `xcrun simctl list devices available`). Returns {devices:[{udid,name,model,os,simulator,booted,state,paired,transport,developerMode}]}. Pass {\"all\":true} to include paired devices that are currently unreachable. Use a device's udid as the `device` option of an ios-app run configuration.",
+        "scope": "global",
+        "readOnly": true,
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "all": {
+              "type": "boolean",
+              "description": "Include paired but unreachable devices"
+            }
+          }
+        }
+      }
+    ],
+    "diagnostics": [
+      {
+        "id": "ios.no-team",
+        "hint": "requires a development team",
+        "pattern": "Signing for \"([^\"]+)\" requires a development team",
+        "severity": "error",
+        "title": "%diag.noTeam.title%",
+        "message": "%diag.noTeam.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.no-profiles",
+        "hint": "No profiles for",
+        "pattern": "No profiles for '([^']+)' were found",
+        "severity": "error",
+        "title": "%diag.noProfiles.title%",
+        "message": "%diag.noProfiles.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.no-account",
+        "hint": "No Account for Team",
+        "pattern": "No Account for Team \"([^\"]+)\"",
+        "severity": "error",
+        "title": "%diag.noAccount.title%",
+        "message": "%diag.noAccount.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.no-certificate",
+        "hint": "No signing certificate",
+        "pattern": "No signing certificate \"([^\"]+)\" found",
+        "severity": "error",
+        "title": "%diag.noCertificate.title%",
+        "message": "%diag.noCertificate.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.device-not-registered",
+        "hint": "registered in your developer account",
+        "pattern": "(?:isn't|is not) registered in your developer account",
+        "severity": "error",
+        "title": "%diag.notRegistered.title%",
+        "message": "%diag.notRegistered.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.team-no-devices",
+        "hint": "has no devices from which to generate",
+        "pattern": "has no devices from which to generate a provisioning profile",
+        "severity": "error",
+        "title": "%diag.notRegistered.title%",
+        "message": "%diag.notRegistered.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.profile-missing-device",
+        "hint": "doesn't include the currently selected device",
+        "pattern": "[Pp]rovisioning profile \"([^\"]+)\" doesn't include the currently selected device",
+        "severity": "error",
+        "title": "%diag.profileDevice.title%",
+        "message": "%diag.profileDevice.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.install-no-profile",
+        "hint": "valid provisioning profile for this executable was not found",
+        "pattern": "valid provisioning profile for this executable was not found",
+        "severity": "error",
+        "title": "%diag.profileDevice.title%",
+        "message": "%diag.profileDevice.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom",
+            "recommended": true
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart"
+          }
+        ]
+      },
+      {
+        "id": "ios.untrusted-developer",
+        "hint": "explicitly trusted",
+        "pattern": "profile has not been explicitly trusted by the user",
+        "severity": "error",
+        "title": "%diag.untrusted.title%",
+        "message": "%diag.untrusted.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retryAfterTrust%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.developer-mode",
+        "hint": "Developer Mode",
+        "pattern": "Developer Mode (?:is )?(?:disabled|turned off)|enable Developer Mode",
+        "severity": "error",
+        "title": "%diag.developerModeLog.title%",
+        "message": "%diag.developerMode.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.device-locked",
+        "hint": "ock",
+        "pattern": "(?i)\\bdevice is locked|(?:iPhone|iPad)\\S* is locked|Unlock (?:your |the )?\\S*(?:iPhone|iPad|device) to continue|because the device was not, or could not be, unlocked|for reason: Locked\\b",
+        "severity": "error",
+        "title": "%diag.locked.title%",
+        "message": "%diag.locked.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retryAfterUnlock%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.not-paired",
+        "hint": "air",
+        "pattern": "(?i)device (?:is )?not paired|has not been paired|not paired with this (?:host|computer|Mac)|could not pair|pairing (?:was )?(?:denied|rejected)",
+        "severity": "error",
+        "title": "%diag.notPairedLog.title%",
+        "message": "%diag.notPaired.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.device-busy",
+        "hint": " is busy",
+        "pattern": "is busy: ([^}]+)",
+        "severity": "warning",
+        "title": "%diag.busy.title%",
+        "message": "%diag.busy.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.destination-not-found",
+        "hint": "Unable to find a destination matching",
+        "pattern": "Unable to find a destination matching the provided destination specifier",
+        "severity": "error",
+        "title": "%diag.destination.title%",
+        "message": "%diag.destination.message%",
+        "fixes": [
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom"
+          },
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.db-locked",
+        "hint": "database is locked",
+        "pattern": "database is locked",
+        "severity": "error",
+        "title": "%diag.dbLocked.title%",
+        "message": "%diag.dbLocked.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.spm-resolve",
+        "hint": "resolve package",
+        "pattern": "(?i)(?:could not|failed to|unable to) resolve package",
+        "severity": "error",
+        "title": "%diag.spmResolve.title%",
+        "message": "%diag.spmResolve.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          },
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom"
+          }
+        ]
+      },
+      {
+        "id": "ios.spm-clone",
+        "hint": "Failed to clone repository",
+        "pattern": "Failed to clone repository (\\S+)",
+        "severity": "error",
+        "title": "%diag.spmClone.title%",
+        "message": "%diag.spmResolve.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          },
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom"
+          }
+        ]
+      },
+      {
+        "id": "ios.spm-missing-product",
+        "hint": "Missing package product",
+        "pattern": "Missing package product '([^']+)'",
+        "severity": "error",
+        "title": "%diag.spmProduct.title%",
+        "message": "%diag.spmResolve.message%",
+        "fixes": [
+          {
+            "id": "retry",
+            "title": "%fix.retry%",
+            "kind": "restart",
+            "recommended": true
+          },
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom"
+          }
+        ]
+      },
+      {
+        "id": "ios.license",
+        "hint": "agreed to the Xcode",
+        "pattern": "You have not agreed to the Xcode (?:and Apple SDKs )?license",
+        "severity": "error",
+        "title": "%diag.license.title%",
+        "message": "%diag.licenseLog.message%"
+      },
+      {
+        "id": "ios.xcode-select",
+        "hint": "is a command line tools instance",
+        "pattern": "requires Xcode, but active developer directory '([^']+)' is a command line tools instance",
+        "severity": "error",
+        "title": "%diag.xcodeSelect.title%",
+        "message": "%diag.xcodeSelectLog.message%",
+        "fixes": [
+          {
+            "id": "developerDir",
+            "title": "%fix.useDefaultXcode%",
+            "kind": "setEnv",
+            "params": {
+              "key": "DEVELOPER_DIR",
+              "value": "/Applications/Xcode.app/Contents/Developer",
+              "scope": "project"
+            },
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.platform-missing",
+        "hint": "is not installed",
+        "pattern": "(iOS [\\d.]+) is not installed",
+        "severity": "error",
+        "title": "%diag.platform.title%",
+        "message": "%diag.platform.message%",
+        "fixes": [
+          {
+            "id": "downloadPlatform",
+            "title": "%fix.downloadPlatform%",
+            "kind": "custom",
+            "recommended": true,
+            "confirm": "%confirm.downloadPlatform%"
+          },
+          {
+            "id": "openXcode",
+            "title": "%fix.openXcode%",
+            "kind": "custom"
+          }
+        ]
+      },
+      {
+        "id": "ios.pods-out-of-sync",
+        "hint": "not in sync with the Podfile.lock",
+        "pattern": "The sandbox is not in sync with the Podfile\\.lock",
+        "severity": "error",
+        "title": "%diag.podsSync.title%",
+        "fixes": [
+          {
+            "id": "install",
+            "title": "%fix.podInstall%",
+            "kind": "installDependencies",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "ios.pod-versions",
+        "hint": "CocoaPods could not find compatible versions",
+        "pattern": "CocoaPods could not find compatible versions for pod \"([^\"]+)\"",
+        "severity": "error",
+        "title": "%diag.podVersions.title%",
+        "message": "%diag.podVersions.message%",
+        "stages": [
+          "install"
+        ]
+      }
+    ]
+  }
+}

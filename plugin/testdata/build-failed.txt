@@ -1,0 +1,13 @@
+error: the following command failed with exit code 1 but produced no further output
+SwiftCompile normal arm64 (in target 'HelloPP' from project 'HelloPP')
+/tmp/sample/HelloBad/HelloPP/HelloPPApp.swift:10:19: error: cannot convert value of type 'String' to specified type 'Int'
+ 8 |     }
+ 9 | }
+10 | let broken: Int = "x"
+   |                   `- error: cannot convert value of type 'String' to specified type 'Int'
+11 | 
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -emit-module -experimental-skip-non-inlinable-function-bodies-without-types /tmp/sample/HelloBad/HelloPP/HelloPPApp.swift -target arm64-apple-ios17.0 -disable-cross-import-overlay-search -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-pl
+2026-11-18 18:38:55.774 xcodebuild[74031:22352373] [MT] IDESchemeActionsInvocationRecord: Device <DVTiPhonePlaceholder: 0x7c9c8a2440 (Any iOS Device | undefined_arch)> is missing operatingSystemVersion, operatingSystemVersionWithBuildNumber.
+** BUILD FAILED **
+

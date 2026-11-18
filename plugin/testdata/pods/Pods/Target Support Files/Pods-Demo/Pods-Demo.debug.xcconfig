@@ -1,0 +1,4 @@
+// 由 CocoaPods 生成（测试用）
+#include? "Pods-Demo.shared.xcconfig"
+OTHER_LDFLAGS = $(inherited) -l"c++" -framework "Alamofire"
+PODS_ROOT = ${SRCROOT}/Pods
