@@ -12,6 +12,9 @@
   },
   "protocol": 1,
   "executable": "bin/paperplane-plugin-ios",
+  "os": [
+    "darwin"
+  ],
   "activation": {
     "files": [
       "*.xcworkspace/",
